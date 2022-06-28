@@ -24,10 +24,13 @@ export default {
         { label: 'Bebidas', icon: 'wine-glass', id: 'glass' },
         { label: 'Doces', icon: 'ice-cream', id: 'ice-cream' },
         { label: 'Combos', icon: 'bacon', id: 'burger-fries' },
-        { label: 'Burgues', icon: 'burger', id: 'burger' },
+        { label: 'Burgues', icon: 'burger', id: 'burguers' },
       ],
-      selectedCategory: 'pizza',
+      selectedCategory: '',
     }
+  },
+  mounted(){
+    this.onCategoryClick('pizza')
   },
   methods: {
     onCategoryClick(id) {
