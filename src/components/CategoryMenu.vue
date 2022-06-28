@@ -4,7 +4,7 @@
       <li
         v-for="category in categoriesList"
         :key="category.id"
-        @click="isSelected(category.id)"
+        @click="onCategoryClick(category.id)"
         :class="{active: isActive(category.id)}"
       >
         <font-awesome-icon :icon="category.icon" />
@@ -30,8 +30,9 @@ export default {
     }
   },
   methods: {
-    isSelected(id) {
+    onCategoryClick(id) {
       this.selectedCategory = id
+      this.$store.dispatch('changeCategory', id)
     },
     isActive(id){
         return this.selectedCategory === id
