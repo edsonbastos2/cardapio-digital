@@ -2,7 +2,7 @@
     <div class="item">
         <div class="container">
             <div class="item__tag" v-if="item.offer">Oferta</div>
-            <img class="item__image" src="@/assets/images/0001.png" alt="">
+            <img class="item__image" :src="imagePath" alt="">
         </div>
         <div class="content">
             <h2 class="item__name">{{item.name}}</h2>
@@ -21,10 +21,15 @@
             }
         },
         props:{
-            item:{
-                type:Object,
-                default:() => ({})
-            }
+            item:{}
+        },
+        computed:{
+            selectedCategory() {
+                return this.$store.state.selectedCategory
+            },
+            imagePath(){
+                return require(`@/assets/images/${this.selectedCategory}/${this.item.id}.png`)
+            },
         }
     }
 </script>
@@ -53,9 +58,8 @@
 
         &__image{
             display: block;
-            max-width: 100%;
-            width: 120px;
-            margin: 20px auto 0px;
+            width: 100%;
+            margin: auto;
         }
 
         &__name{

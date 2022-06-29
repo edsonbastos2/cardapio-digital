@@ -21,9 +21,9 @@ export default {
     return {
       categoriesList: [
         { label: 'Pizza', icon: 'pizza-slice', id: 'pizza' },
-        { label: 'Bebidas', icon: 'wine-glass', id: 'glass' },
-        { label: 'Doces', icon: 'ice-cream', id: 'ice-cream' },
-        { label: 'Combos', icon: 'bacon', id: 'burger-fries' },
+        { label: 'Bebidas', icon: 'wine-glass', id: 'drinks' },
+        { label: 'Sobremesa', icon: 'ice-cream', id: 'deserts' },
+        { label: 'Combos', icon: 'bacon', id: 'combo' },
         { label: 'Burgues', icon: 'burger', id: 'burguers' },
       ],
       selectedCategory: '',
