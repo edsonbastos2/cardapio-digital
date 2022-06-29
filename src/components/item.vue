@@ -1,5 +1,5 @@
 <template>
-    <div class="item">
+    <div class="item" @click="addToCart">
         <div class="container">
             <div class="item__tag" v-if="item.offer">Oferta</div>
             <img class="item__image" :src="imagePath" alt="">
@@ -30,7 +30,12 @@
             imagePath(){
                 return require(`@/assets/images/${this.selectedCategory}/${this.item.id}.png`)
             },
-        }
+        },
+        methods: {
+            addToCart() {
+                this.$store.dispatch('addToCart', this.item)
+            }
+        },
     }
 </script>
 
@@ -43,6 +48,9 @@
         position: relative;
         padding: 20px;
         margin: 20px;
+
+        display: flex;
+        flex-direction: column;
 
         &__tag{
             position: absolute;
@@ -65,7 +73,7 @@
         &__name{
             font-weight: 600;
             font-size: 18px;
-            margin: 8px auto;
+            margin: 0;
         }
 
         &__description{
@@ -73,13 +81,26 @@
             color: @dark-grey;
             font-size: 12px;
             margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
         }
 
         &__price{
             color: @yellow;
             font-weight: 600;
             font-size: 18px;
-            margin: 8px auto;
+            margin: 0;
+        }
+
+        .content{
+            height: 100%;
+            max-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-top: 10px;
         }
 
         @media @tablets{
@@ -88,7 +109,8 @@
             border: 1px solid @light-grey;
             display: flex;
             margin: 10px 0;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            flex-direction: row;
 
             .container{
                 display: flex;
@@ -97,15 +119,19 @@
                 margin-right: 10px;
             }
 
+            .content{
+                flex-grow: 1;
+            }
+
             &__image{
-                height: 60px;
+                width: 86px;
                 order: 0;
                 margin: 0 0 10px 0;
             }
 
             &__price{
                 text-align: right;
-                margin: 3px auto;
+                margin: 5px 0 0 auto;
             }
 
             &__tag{

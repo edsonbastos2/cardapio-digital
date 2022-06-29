@@ -1,0 +1,34 @@
+<template>
+    <div class="cart">
+        <h2 class="cart__title">Seu pedido</h2>
+        <CartItem v-for="item in cartList" :key="item.id" :item="item"/>
+    </div>
+</template>
+
+<script>
+    import CartItem from '@/components/CartItem.vue'
+    export default {
+        name:'CartComponent',
+        components:{
+            CartItem
+        },
+        computed: {
+            cartList() {
+                return this.$store.state.cartList
+            }
+        },
+    }
+</script>
+
+<style lang="less" scoped>
+    .cart{
+        background-color: #fff;
+        min-width: 643px;
+        padding: 50px;
+
+        &__title{
+            font-weight: 600;
+            font-size: 24px;
+        }
+    }
+</style>

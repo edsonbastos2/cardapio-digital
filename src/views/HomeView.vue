@@ -2,6 +2,7 @@
   <div class="home">
     <CategoryMenu/>
     <ItemLIst/>
+    <Cart/>
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 // @ is an alias to /src
 import CategoryMenu from '@/components/CategoryMenu.vue'
 import ItemLIst from '@/components/ItemList.vue'
+import Cart from '@/components/Cart.vue'
 export default {
   name: 'HomeView',
   components: {
     CategoryMenu,
-    ItemLIst
+    ItemLIst,
+    Cart
   }
 }
 </script>
