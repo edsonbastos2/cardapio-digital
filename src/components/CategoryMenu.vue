@@ -25,6 +25,7 @@ export default {
         { label: 'Sobremesa', icon: 'ice-cream', id: 'deserts' },
         { label: 'Combos', icon: 'bacon', id: 'combo' },
         { label: 'Burgues', icon: 'burger', id: 'burguers' },
+        { label: 'HotDog', icon: 'hotdog', id: 'hotdog' },
       ],
       selectedCategory: '',
     }
