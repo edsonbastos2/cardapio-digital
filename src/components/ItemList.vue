@@ -21,7 +21,9 @@ export default {
     }
   },
 
-  created() {},
+  created() {
+    this.getItens()
+  },
   computed: {
     selectedCategory() {
         return this.$store.state.selectedCategory

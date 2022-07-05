@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <div class="card__item" v-if="isMobile()">
+    <router-link to="/cart" class="card__item" v-if="isMobile()">
       <font-awesome-icon icon="fa-solid fa-bag-shopping" />
-    </div>
+    </router-link>
     <CategoryMenu/>
     <ItemLIst/>
     <Cart v-if="isDesktop()"/>

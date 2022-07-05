@@ -114,5 +114,29 @@
             flex-grow: 1;
             padding: 0 20px;
         }
+
+        @media @tablets {
+            flex-wrap: wrap;
+
+            &__image-container{
+                order: 1;
+            }
+
+            .content{
+                order: 2;
+            }
+
+            &__quantity{
+                order: 3;
+                padding: 0;
+                width: 81px;
+                justify-content: center;
+            }
+
+            &__price{
+                order: 4;
+                padding: 0 20px;
+            }
+        }
     }
 </style>
